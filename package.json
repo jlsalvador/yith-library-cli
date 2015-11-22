@@ -1,28 +1,29 @@
 {
-    "name": "yith-library-cli",
-    "version": "0.2.2",
-    "preferGlobal": true,
-    "author": "Alejandro Blanco <alejandro.b.e@gmail.com>",
-    "description": "A command-line tool for Yith Library",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ablanco/yith-library-cli.git"
-    },
-    "keywords": [
-        "cli",
-        "yith",
-        "yithlibrary",
-        "password"
-    ],
-    "dependencies": {
-        "commander": "2.1.x",
-        "prompt": "0.2.x"
-    },
-    "bin": {
-        "yith": "./yith"
-    },
-    "engines": {
-        "node": ">=0.6"
-    }
+  "name": "yith-library-cli",
+  "version": "0.2.2",
+  "preferGlobal": true,
+  "author": "Alejandro Blanco <alejandro.b.e@gmail.com>",
+  "description": "A command-line tool for Yith Library",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ablanco/yith-library-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "yith",
+    "yithlibrary",
+    "password"
+  ],
+  "dependencies": {
+    "commander": "2.1.x",
+    "prompt": "0.2.x",
+    "sjcl": "^1.0.3"
+  },
+  "bin": {
+    "yith": "./yith"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
 }
