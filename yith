@@ -332,11 +332,14 @@ sjcl.misc.S={};sjcl.misc.cachedPbkdf2=function(a,b){var c=sjcl.misc.S,d;b=b||{};
                     // In other cases keep the original URL
                     extra = url + "\n\n" + extra;
                 }
+                if (favorite === "1") {
+                    grouping += " Favorites";
+                }
                 yithEntry = createEntry(
                     name, // service
                     username, // account
                     sjcl.encrypt(input.password, password), // secret
-                    grouping, // tags
+                    grouping.trim(), // tags
                     extra // notes
                 );
                 yithData.push(yithEntry);
