@@ -248,10 +248,15 @@
                     grouping.push("Notes");
                 } else {
                     // In other cases keep the original URL
-                    extra = JSON.stringify({
-                        url: url,
-                        extra: extra
-                    });
+                    var extraObj = {};
+                    // In other cases keep the original URL
+                    if (url.length > 0) {
+                        extraObj.url = url;
+                    }
+                    if (lastpassEntry[3].length > 0) {
+                        extraObj.extra = lastpassEntry[3];
+                    }
+                    extra = JSON.stringify(extraObj);
                 }
                 if (favorite === "1") {
                     grouping.push("Favorites");
