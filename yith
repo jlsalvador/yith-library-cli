@@ -236,13 +236,13 @@
                 password = lastpassEntry[2];
                 extra = lastpassEntry[3];
                 name = lastpassEntry[4];
-                grouping = lastpassEntry[5];
+                grouping = [lastpassEntry[5]];
                 favorite = lastpassEntry[6];
                 if (url === "http://sn") {
                     // Secure note, secret is in extra
                     password = extra;
                     extra = "";
-                    grouping += " Notes";
+                    grouping.push("Notes");
                 } else {
                     // In other cases keep the original URL
                     extra = JSON.stringify({
@@ -251,13 +251,13 @@
                     });
                 }
                 if (favorite === "1") {
-                    grouping += " Favorites";
+                    grouping.push("Favorites");
                 }
                 yithEntry = createEntry(
                     name, // service
                     username, // account
                     sjcl.encrypt(input.password, password), // secret
-                    grouping.trim(), // tags
+                    grouping, // tags
                     extra // notes
                 );
                 yithData.push(yithEntry);
