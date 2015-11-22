@@ -236,8 +236,11 @@
                 password = lastpassEntry[2];
                 extra = lastpassEntry[3];
                 name = lastpassEntry[4];
-                grouping = [lastpassEntry[5]];
+                grouping = [];
                 favorite = lastpassEntry[6];
+                if (lastpassEntry[5].length > 0) {
+                    grouping.push(lastpassEntry[5]);
+                }
                 if (url === "http://sn") {
                     // Secure note, secret is in extra
                     password = extra;
